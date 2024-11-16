@@ -1,6 +1,7 @@
 package com.listGame.dslist.models;
 import java.util.Objects;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -8,7 +9,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "tb_game")
+@Table(name = "tb_games")
 public class Game {
     
 
@@ -16,12 +17,23 @@ public class Game {
     @GeneratedValue(strategy  = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(nullable = false)
     private String titulo;
+    @Column(nullable = false)
     private Integer ano;
+    @Column(nullable = false )
     private String genero;
-    private String plataform;
+    @Column(nullable = false)
+    private String plataforma;
+    @Column(nullable = false)
+    private Double score;
+    @Column(nullable = false, name = "img_url")
     private String imgUrl;
+
+    @Column(columnDefinition = "TEXT", name = "descricao_curta")
     private String descricaoCurta;
+
+    @Column(columnDefinition = "TEXT", name = "descricao_longa")
     private String longDescricacao;
 
     public Long getId() {
@@ -56,13 +68,23 @@ public class Game {
         this.genero = genero;
     }
 
-    public String getPlataform() {
-        return plataform;
+    public String getPlataforma() {
+        return plataforma;
     }
 
-    public void setPlataform(String plataform) {
-        this.plataform = plataform;
+    public void setPlataforma(String plataforma) {
+        this.plataforma = plataforma;
     }
+ 
+
+    public Double getScore() {
+        return score;
+    }
+
+    public void setScore(Double score) {
+        this.score = score;
+    }
+
 
     public String getImgUrl() {
         return imgUrl;
@@ -88,12 +110,13 @@ public class Game {
         this.longDescricacao = longDescricacao;
     }
 
-    public Game(Long id, String titulo, Integer ano, String genero, String plataform, String imgUrl, String descricaoCurta, String longDescricacao) {
+    public Game(Long id, String titulo, Integer ano, String genero, String plataforma, Double score, String imgUrl, String descricaoCurta, String longDescricacao) {
         this.id = id;
         this.titulo = titulo;
         this.ano = ano;
         this.genero = genero;
-        this.plataform = plataform;
+        this.plataforma = plataforma;
+        this.score = score;
         this.imgUrl = imgUrl;
         this.descricaoCurta = descricaoCurta;
         this.longDescricacao = longDescricacao;
