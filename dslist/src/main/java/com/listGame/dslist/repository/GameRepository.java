@@ -6,4 +6,5 @@ import com.listGame.dslist.models.Game;
 
 public interface GameRepository extends JpaRepository<Game, Long> {
     
+    
 }
