@@ -9,7 +9,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "tb_games")
+@Table(name = "tb_game")
 public class Game {
     
 
@@ -34,7 +34,7 @@ public class Game {
     private String descricaoCurta;
 
     @Column(columnDefinition = "TEXT", name = "descricao_longa")
-    private String longDescricacao;
+    private String longaDescricacao;
 
     public Long getId() {
         return id;
@@ -103,14 +103,14 @@ public class Game {
     }
 
     public String getLongDescricacao() {
-        return longDescricacao;
+        return longaDescricacao;
     }
 
     public void setLongDescricacao(String longDescricacao) {
-        this.longDescricacao = longDescricacao;
+        this.longaDescricacao = longDescricacao;
     }
 
-    public Game(Long id, String titulo, Integer ano, String genero, String plataforma, Double score, String imgUrl, String descricaoCurta, String longDescricacao) {
+    public Game(Long id, String titulo, Integer ano, String genero, String plataforma, Double score, String imgUrl, String descricaoCurta, String longaDescricacao) {
         this.id = id;
         this.titulo = titulo;
         this.ano = ano;
@@ -119,7 +119,7 @@ public class Game {
         this.score = score;
         this.imgUrl = imgUrl;
         this.descricaoCurta = descricaoCurta;
-        this.longDescricacao = longDescricacao;
+        this.longaDescricacao = longaDescricacao;
     }
 
     public Game(){
